@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.02">
+    <persistence_unit name="phpCriteriaPersistence">
+    <properties>
+        <property name="criteria.connection.driver_class" value="mysql.Driver"/>
+        <property name="criteria.connection.password" value=""/>
+        <property name="criteria.connection.url" value="localhost:3306"/>
+        <property name="criteria.connection.username" value=""/>
+        <property name="criteria.connection.db_default" value=""/>
+    </properties>
+    </persistence_unit>
+</persistence>
