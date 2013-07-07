@@ -166,8 +166,11 @@ class Criteria extends CriteriaSpecification {
         $properties = $oReflectionClass->getProperties();
         $this->className = $class = $oReflectionClass->getName();
         $this->table = CriteriaEntityMgr::instance()->findTable($this->className);
-        foreach ($properties as $key => $reflectionProperty)
-            $datos_set[$reflectionProperty->getName()] = $reflectionProperty->getValue($object);
+        foreach ($properties as $key => $reflectionProperty){
+            $value = $reflectionProperty->getValue($object);
+            $value = str_replace("'", "\'", $value);
+            $datos_set[$reflectionProperty->getName()] = $value;
+        }
         $this->SQL = MySQL_DB::instance()->DBSQLInsert($datos_set, $this->table);
         $this->execute(CriteriaProperty::QUERY_SQL_INSERT);
         return $this;
