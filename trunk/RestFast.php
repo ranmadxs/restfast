@@ -27,8 +27,8 @@ class RestFast {
         if($this->className == NULL){
             Throw new RestFastException("se debe setear la clase primero");
         }
-        
-        if(count($listPathInfo) == 1 && $_SERVER["REQUEST_METHOD"] == RestRequestType::TYPE_GET){
+        if(($_SERVER["PATH_INFO"] == "" || $_SERVER["PATH_INFO"] == "/") 
+                && $_SERVER["REQUEST_METHOD"] == RestRequestType::TYPE_GET){
             $this->getCatalog();
             $existe = TRUE;
         }
