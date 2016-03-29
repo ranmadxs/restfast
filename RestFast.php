@@ -1,13 +1,13 @@
 <?php
 include_once 'config-inc.php';
 include_once 'RestMediaType.php';
-include_once dirname(__FILE__).'/../PHPBind.php';
+include_once 'RestClassDescriptor.php';
 include_once dirname(__FILE__)."/".LIB_ADDENDUM.'/annotations.php';
 include_once dirname(__FILE__).'/utils/RestFastException.php';
 
 /**
  * Description of RestFast
- * API para la publicación de servicios REST
+ * API para la publicaciï¿½n de servicios REST
  *
  * @author esanchez
  */
