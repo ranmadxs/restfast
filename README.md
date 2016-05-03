@@ -20,7 +20,7 @@ El tipo de respuesta del servicio, para este caso json
 
 Un ejemplo de la implementación de estas dos clases sería:
 
-```php
+```java
 /**
  @Path("/exampleRest")
  @Produces(mediaType="json")
