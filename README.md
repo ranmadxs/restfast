@@ -14,7 +14,7 @@ API escrita en PHP, que permite publicar servicios Rest mediante anotaciones.
 Indica la ruta relativa donde se encuentran todos los servicios disponibles
 
 ```java
- @Produces(mediaType="json")
+@Produces(mediaType="json")
 ```
 El tipo de respuesta del servicio, para este caso json
 
@@ -29,7 +29,56 @@ class ExampleRest {
  ...
 }
 ```
+Los métodos de la clase pueden utilizar las siguientes anotaciones:
 
+```java
+@Path("/lista/{id}/{code}")
+```
+Completa la uri definida en la clase, se puede utilizar para identificar el método de la clase, se pueden utilizar queryParams
+para este caso id, code.
+
+```java
+@GET, @POST
+```
+Nos indica el tipo con el cual es expuesto el método
+
+Un ejemplo de implementación sería:
+
+```php
+/**
+ @Path("/exampleRest")
+ @Produces(mediaType="json")
+ */
+class ExampleRest {
+
+ 	/**
+	 @Path("/listAll/")
+	 @GET
+	 */
+	 public function listAll(){
+	    ...
+	    return $lista;
+	 }
+	 
+	 	/**
+	 @Path("/delete/{id}")
+	 @GET
+	 */        
+	 public function delete($id){
+	  ...
+  }
+
+	/**
+	 @Path("/create")
+	 @POST
+	 */
+	public function create(){
+	 // dentro se ocupa el $_POST para recuperar la información
+	 ...
+	}
+  
+}
+```
 
 ### Catálogo de Servicios Rest
 
