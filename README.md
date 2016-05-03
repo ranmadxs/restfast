@@ -44,7 +44,7 @@ Nos indica el tipo con el cual es expuesto el método
 
 Un ejemplo de implementación sería:
 
-```php
+```java
 /**
  @Path("/exampleRest")
  @Produces(mediaType="json")
@@ -66,7 +66,7 @@ class ExampleRest {
 	 */        
 	 public function delete($id){
 	  ...
-  }
+  	 }
 
 	/**
 	 @Path("/create")
